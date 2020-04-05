@@ -1,0 +1,36 @@
+.MultiSelect{
+    width: 50%;
+}
+.selects {
+    min-height: 32px;
+    background-color: white;
+    color: black;
+    padding-top: 3px;
+    margin-top: 3px;
+}
+
+li {
+    width: 140px;
+    list-style-type: none;   
+    background-color: white;
+    display: flex;
+    height: 32px;
+}
+
+.MultiSelect input {
+    border: none;
+    width: 80%;
+    border-top: 1px solid #fbf9f9;
+    outline: none;
+}
+
+.selected::after {
+    content: '\2713';
+    color: rgb(0, 255, 179);
+    
+}
+
+ul {
+    position: absolute;
+    margin-top: 0;
+}

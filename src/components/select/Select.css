@@ -1,0 +1,13 @@
+.Select {
+    width: 50%;
+}
+.selectedItem{
+    height: 32px;
+    color: black;
+    background-color: white;
+}
+.Select input {
+    width: 100%;
+    border-top: 1px solid #fbf9f9;
+    outline: none;
+}
