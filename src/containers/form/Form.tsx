@@ -4,10 +4,12 @@ import Button from "../../components/button/Button";
 import Radio from "../../components/radio/Radio";
 import Select from "../../components/select/Select";
 import MultiSelect from "../../components/multiSelect/MultiSelect";
+import DynamicDropdown from "../../components/dynamicDropdown/DynamicDropdown";
 import "./From.css";
 
 interface FormState {
     country: string,
+    provice: string,
     city: string,
     roles: string[],
     techStack: string[],
@@ -17,6 +19,7 @@ interface FormState {
 class Form extends React.Component<{}, FormState> {
           state: FormState = {
             country: "",
+            provice: "",
             city: "",
             roles: ["Dev", "BA", "QA"],
             techStack: ["Java", "JS", "Mysql", "C++", "Python", "PHP"]
@@ -36,13 +39,12 @@ class Form extends React.Component<{}, FormState> {
         return (
             <div className="FromWrapper">
             <form className="Form" onSubmit={this.handleSubmit}>
-                <div>
+                <div className="InputWrapper">
                 <span>Country：</span>
                 <Input change={this.handleCountry}/>
                 </div>
-                <div>
-                <span>City:</span>
-                <Input change={this.handleCity}/>
+                <div className="DynamicDropdownWrapper">
+                    <DynamicDropdown />
                 </div>
                 <div className="RadioWrapper">
                     <span>Gender:</span>

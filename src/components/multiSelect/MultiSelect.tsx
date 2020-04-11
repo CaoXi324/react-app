@@ -29,10 +29,10 @@ class MultiSelect extends React.Component<MultiSelectProps, MultiSelectState>{
                 selectedItems
             }
         });
-        event.persist()
+        event.persist();
     };
 
-    getAllOptions = ():JSX.Element[] => {
+    getAllOptions:() => JSX.Element[] = ():JSX.Element[] => {
         return this.props.items.map(element => {
             return <li>
                 <input value={element} key={element} onClick={this.selectItem} type="button"/>
@@ -48,7 +48,7 @@ class MultiSelect extends React.Component<MultiSelectProps, MultiSelectState>{
     showItems = ():void => {
         this.setState({
             isShowItems: !this.state.isShowItems
-        })
+        } as MultiSelectState)
     };
 
     private addToSelected(state: Readonly<MultiSelectState>, event: any) {

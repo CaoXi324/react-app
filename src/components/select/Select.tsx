@@ -7,7 +7,8 @@ interface SelectState {
 }
 
 type SelectProps = {
-    items: string[]
+    items: string[];
+    selectProvice?: Function;
 }
 
 class Select extends React.Component<SelectProps, SelectState> {
@@ -31,7 +32,8 @@ class Select extends React.Component<SelectProps, SelectState> {
         this.setState({
             selectedValue: event.target.value,
             isOpenBox: false
-        })
+        });
+        this.props.selectProvice && this.props.selectProvice(event.target.value);
     };
 
     showAllOptions = (): JSX.Element[] => {
@@ -49,7 +51,6 @@ class Select extends React.Component<SelectProps, SelectState> {
          </div>
         )
     }
-
 }
 
 export default Select;
